@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清单一下</title>
+    <meta
+      name="description"
+      content="一个简洁的 H5 待办清单，支持新增、完成、删除和本地持久化。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="todo-card" aria-label="待办清单应用">
+        <header class="hero">
+          <p class="eyebrow">Simple H5 Todo</p>
+          <h1>清单一下</h1>
+          <p class="subtitle">记录今天要做的事，刷新页面也不会丢。</p>
+        </header>
+
+        <form class="todo-form" id="todo-form">
+          <label class="sr-only" for="todo-input">输入待办事项</label>
+          <input
+            id="todo-input"
+            class="todo-input"
+            type="text"
+            name="todo"
+            placeholder="输入一条待办事项"
+            maxlength="80"
+            autocomplete="off"
+          />
+          <button class="add-button" type="submit">添加</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="tablist" aria-label="待办筛选">
+            <button class="filter-button is-active" type="button" data-filter="all">
+              全部
+            </button>
+            <button class="filter-button" type="button" data-filter="active">
+              进行中
+            </button>
+            <button class="filter-button" type="button" data-filter="completed">
+              已完成
+            </button>
+          </div>
+          <p class="status" id="todo-status">0 项待完成</p>
+        </div>
+
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+
+        <div class="empty-state" id="empty-state">
+          <p>还没有待办事项，先添加一条吧。</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
